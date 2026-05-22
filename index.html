@@ -529,7 +529,7 @@ function submitForm() {
   const pLevel = pAvg < 50 ? '輕微' : pAvg < 70 ? '中度' : '嚴重';
   const wLevel = wAvg < 45 ? '輕微' : wAvg < 60 ? '中度' : '嚴重';
 
-  showResult(name, location, unit, empid, title, pAvg, pLevel, wAvg, wLevel);
+  showResult(name, location, unit, empid, pAvg, pLevel, wAvg, wLevel);
 
   sendToSheet({
     timestamp: new Date().toLocaleString('zh-TW'),
@@ -543,7 +543,7 @@ function submitForm() {
   });
 }
 
-function showResult(name, location, unit, empid, title, pAvg, pLevel, wAvg, wLevel) {
+function showResult(name, location, unit, empid, pAvg, pLevel, wAvg, wLevel) {
   document.getElementById('form-section').style.display = 'none';
   document.getElementById('result-section').style.display = 'block';
   document.getElementById('r-name-display').textContent = `${location} ／ ${unit} ／ ${name}`;
